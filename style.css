@@ -1,106 +1,76 @@
 body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url('BGG.png'); 
-    background-position: center; 
-    background-attachment: fixed; 
-    font-family: 'Roboto', sans-serif;
     margin: 0;
 }
 
 .calculator {
-    width: 280px;
-    background: rgba(30, 30, 47, 0.8); 
-    padding: 25px;
-    border-radius: 20px;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    width: 260px;
+    background: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
-
 
 .display {
     width: 100%;
-    height: 70px;
-    border: none;
-    border-radius: 12px;
-    background: #111;
-    color: #00ff99;
-    font-size: 36px;
+    height: 50px;
+    background-color: #222;
+    color: #00FF00;
+    font-size: 32px;
     text-align: right;
-    padding: 15px;
+    border: none;
+    padding: 10px;
     margin-bottom: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
-
 
 .buttons {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
+    gap: 10px;
 }
 
-
-input[type="button"] {
-    padding: 20px;
-    font-size: 24px;
+button, .button {
+    padding: 15px;
+    font-size: 20px;
+    border-radius: 8px;
     border: none;
-    border-radius: 12px;
-    background: #444;
-    color: white;
     cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
 }
 
-
-input[type="button"]:hover {
-    background: #575757;
-    transform: translateY(-3px);
+button:hover, .button:hover {
+    background-color: #444;
 }
-
 
 .operator {
-    background: linear-gradient(145deg, #ff7e5f, #feb47b);
-    color: #fff;
+    background-color: #ff7e5f;
+    color: white;
 }
-
 
 .operator:hover {
-    background: #ff5a39;
+    background-color: #e65c3a;
 }
-
 
 .equals {
-    background: linear-gradient(145deg, #6b93ff, #4661f5);
+    background-color: #4caf50;
     color: white;
-}
-
-
-.equals:hover {
-    background: #3b5ef7;
-    transform: translateY(-3px);
-}
-
-
-.clear {
-    background: linear-gradient(145deg, #ff6b6b, #ff3b3b);
-    color: white;
-}
-
-
-.clear:hover {
-    background: #ff3b3b;
-    transform: translateY(-3px);
-}
-
-
-input[value="0"] {
     grid-column: span 2;
 }
 
+.equals:hover {
+    background-color: #45a049;
+}
 
-input[type="button"]:active {
-    transform: translateY(1px);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+.clear {
+    background-color: #ff4040;
+    color: white;
+}
+
+.clear:hover {
+    background-color: #e63946;
 }
