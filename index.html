@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator UI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>MEMBRE: <br> DOYIE <br> GALIE <br> SALTY <br> <br> GAYIE <br> <br> CYIE <br> </h1>
+
+<div class="calculator">
+    <input type="text" class="display" id="display" disabled>
+
+    <div class="buttons">
+        <input onclick="insert('7')" type="button" value="7">
+        <input onclick="insert('7')" type="button" value="8">
+        <input onclick="insert('7')" type="button" value="9">
+        <input onclick="insert('/')" type="button" value="/">
+
+        <input onclick="insert('7')" type="button" value="4">
+        <input onclick="insert('7')" type="button" value="5">
+        <input onclick="insert('7')" type="button" value="6">
+        <input onclick="insert('*')" type="button" value="*">
+
+        <input onclick="insert('7')" type="button" value="1">
+        <input onclick="insert('7')" type="button" value="2">
+        <input onclick="insert('7')" type="button" value="3">
+        <input onclick="insert('-')" type="button" value="-">
+
+        <input onclick="insert('7')" type="button" value="0">
+        <input onclick="insert('7')" type="button" value=".">
+        <input onclick="insert('7')" type="button" value="C">
+
+        <input type="button" value="=" class="button equals">
+    </div>
+</div>
+
+<script> 
+let display = document.getElementById('display');
+let buttons = document.querySelectorAll('.button');
+let currentInput = "";
+
+buttons.forEach(button => {
+    button.addEventListener('click', function() {
+        let value = button.value;
+
+        
+        if (value === "=") {
+            try {
+                currentInput = eval(currentInput).toString();
+            } catch (e) {
+                currentInput = "Error"; 
+            }
+        }
+        
+        else if (value === "C") {
+            currentInput = "";
+        }
+        
+        else {
+            currentInput += value;
+        }
+
+     
+        display.value = currentInput;
+    });
+});
+</script>
+
+</body>
+</html>
